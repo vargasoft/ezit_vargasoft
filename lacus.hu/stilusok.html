@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8">
+        <title>Stílusok</title>
+        
+        <style>
+            #ev {
+                color: red;
+
+            }
+            #link {
+
+            } 
+            #cim {
+                font-size: 50px;
+
+            }
+            #alcim {
+                font-size: 50px;
+
+            }
+            #alcim2 {
+                font-weight: bold;
+                font-size: larger;
+
+            }
+            #menu {
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+    <body>
+            <!--ez egy címsor-->
+            <h1>Üdvözölek a weboldalamon!</h1>
+            <!--ez egy másik címsor
+            <h2>Üdvözölek a weboldalamon!</h2>-->
+            <!--<h3>Üdvözölek a weboldalamon!</h3>-->
+
+            <!--Ez egy bekezdés-->
+            
+            <h2>
+                Navigáció
+            </h2>
+            
+
+            <!--Ez egy felsorolás, lista-->
+            <li id="menu" title="Kezdőoldal"><a href="index.html">Kezdőoldal</a></li>
+            <li id="menu" title="Szöveg Formázása"><a href="formazas.html">Szöveg Formázása</a></li>
+            <li id="menu" title="Képek"><a href="kepek.html">Képek</a></li>
+            <li id="menu" title="Stílusok"><a href="stilusok.html">Stílusok</a></li>
+            <br/>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>
+                <span style="font-size: 50px;font-weight: 200;">Stílusok</span>
+            </h3>
+            <p>
+                HTML can embed programs written in a <a href="">scripting language</a> such as <a href="">JavaScript</a>, which affects the behavior and content of web pages. 
+                The inclusion of CSS defines the look and layout of content.<br/> 
+                The <a href="">World Wide Web Consortium</a> (W3C), former maintainer of the HTML and current maintainer of the CSS standards, has encouraged the use of
+                <a href="">CSS</a> over explicit presentational HTML since 1997.<br/>
+                <a href=""><sup>[2]</sup></a>A form of HTML, known as <a href="">HTML5</a>, is used to display video and audio, primarily using the <span style="color: green;">canvas</span> element, together with JavaScript.
+            </p>
+            <p>
+                <hr/>
+                <h4 style="font-size: 30px;text-transform: uppercase;text-align: center;">
+                    <i>Direkt formázás</i>
+                </h4>
+                <hr/>
+                <span style="font-size: 50px;">History</span><hr/>
+                <b><span style="font-size: 25px;">Development</span></b><br/><br/>
+                Photograph of Tim Berners-Lee in April <span style="color: red;">2009</span>
+                Tim Berners-Lee in April <span style="color: red;">2009</span>
+                In <span style="color: red;">1980</span>, <a href="">physicist Tim Berners-Lee</a>, a contractor at CERN, proposed and prototyped ENQUIRE, a system for CERN researchers to use and share documents. 
+                In <span style="color: red;">1989</span>, Berners-Lee wrote a memo proposing an Internet-based hypertext system.[3] Berners-Lee specified HTML and wrote the browser and server software 
+                in late 1990. That year, Berners-Lee and CERN data systems engineer Robert Cailliau collaborated on a joint request for funding, but the project was not 
+                formally adopted by CERN. In his personal notes of <span style="color: red;">1990</span>, Berners-Lee listed "some of the many areas in which hypertext is used"; an <a href="">encyclopedia</a> is the first entry.[4]
+            </p>
+            <p>
+                <hr/>
+                <h4 id="cim">
+                    <i>Indirekt formázás</i>
+                </h4>
+                <hr/>
+                <span id="alcim">History</span><hr/>
+                <span id="alcim2">Development</span><br/><br/>
+                Photograph of Tim Berners-Lee in April <span id="ev">2009</span>
+                Tim Berners-Lee in April <span id="ev">2009</span>
+                In <span id="ev">1980</span>, <a id="link" href="">physicist Tim Berners-Lee</a>, a contractor at CERN, proposed and prototyped ENQUIRE, a system for CERN researchers to use and share documents. 
+                In <span id="ev">1989</span>, Berners-Lee wrote a memo proposing an Internet-based hypertext system.[3] Berners-Lee specified HTML and wrote the browser and server software 
+                in late 1990. That year, Berners-Lee and CERN data systems engineer Robert Cailliau collaborated on a joint request for funding, but the project was not 
+                formally adopted by CERN. In his personal notes of <span id="ev">1990</span>, Berners-Lee listed "some of the many areas in which hypertext is used"; an <a href="" id="link">encyclopedia</a> is the first entry.[4]
+            </p>
+    </body>    
+</html>
