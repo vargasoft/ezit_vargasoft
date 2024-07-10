@@ -14,17 +14,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Get previous commit SHA
+      - name: Determine previous commit
         id: prev-commit
         run: |
-          git fetch origin main
-          PREV_COMMIT=$(git rev-parse HEAD^1 || echo 'initial')
+          if git rev-parse HEAD^1 > /dev/null 2>&1; then
+            PREV_COMMIT=$(git rev-parse HEAD^1)
+          else
+            PREV_COMMIT=""
+          fi
           echo "PREV_COMMIT=$PREV_COMMIT" >> $GITHUB_ENV
 
       - name: Get changed files
         id: changes
         run: |
-          if [ "$PREV_COMMIT" != "initial" ]; then
+          if [ -n "$PREV_COMMIT" ]; then
             git diff --name-only $PREV_COMMIT HEAD > changed_files.txt
           else
             git ls-files > changed_files.txt
