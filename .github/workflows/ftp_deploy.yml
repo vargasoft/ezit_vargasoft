@@ -18,7 +18,8 @@ jobs:
         id: prev-commit
         run: |
           git fetch origin main
-          echo "PREV_COMMIT=$(git rev-parse HEAD^1 || echo 'initial')" >> $GITHUB_ENV
+          PREV_COMMIT=$(git rev-parse HEAD^1 || echo 'initial')
+          echo "PREV_COMMIT=$PREV_COMMIT" >> $GITHUB_ENV
 
       - name: Get changed files
         id: changes
