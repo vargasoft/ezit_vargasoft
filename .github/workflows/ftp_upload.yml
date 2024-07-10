@@ -7,12 +7,19 @@ on:
 
 jobs:
   ftp-deploy:
-    name: Upload files via FTP
+    name: Upload modified files via FTP
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Get changed files
+        id: changes
+        run: |
+          git fetch origin main
+          git diff --name-only HEAD^ HEAD > changed_files.txt
+          echo "CHANGED_FILES=$(cat changed_files.txt | tr '\n' ' ')" >> $GITHUB_ENV
 
       - name: Upload files via FTP
         uses: sebastianpopp/ftp-action@v1.1.0
@@ -22,3 +29,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: .
           remoteDir: /public_html/
+          include: ${{ env.CHANGED_FILES }}
