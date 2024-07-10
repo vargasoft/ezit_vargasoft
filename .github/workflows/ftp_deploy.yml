@@ -14,11 +14,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Get previous commit SHA
+        id: prev-commit
+        run: |
+          git fetch origin main
+          echo "PREV_COMMIT=$(git rev-parse HEAD^1 || echo 'initial')" >> $GITHUB_ENV
+
       - name: Get changed files
         id: changes
         run: |
-          git fetch origin main
-          git diff --name-only HEAD^ HEAD > changed_files.txt
+          if [ "$PREV_COMMIT" != "initial" ]; then
+            git diff --name-only $PREV_COMMIT HEAD > changed_files.txt
+          else
+            git ls-files > changed_files.txt
+          fi
           echo "CHANGED_FILES=$(cat changed_files.txt | tr '\n' ' ')" >> $GITHUB_ENV
 
       - name: Upload files via FTP
