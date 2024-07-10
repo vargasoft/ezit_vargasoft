@@ -4,56 +4,70 @@
     <head>
         <meta charset="UTF-8">
         <title>Stílusok</title>
-        
+         <!--Ez az oldal leírása-->
+        <meta name="description" content="Ez Lacus első oldala">
+        <!--Kulcsszavak-->
+        <meta name="keyword" content="html, lacus, lacus.hu, gyakorlás">
+
+        <!--Facebook meta info-->
+        <!--Facebook oldal címe-->
+        <meta property="og:title" content="🍓Stílusok🍓">
+        <meta property="og:description" content="Az első weboldalam örülök hogy itt vagy.">
+        <meta property="og:image" content="src/fc244.jpg">
+		<meta property="og:url" content="https://lacus.hu/stilusok.html">
+
+            
         <style>
-            #ev {
-                color: red;
+			body {
+				margin: 0; /* Eltávolítjuk az alapértelmezett margókat */
+				padding: 0; /* Eltávolítjuk az alapértelmezett kitöltéseket */
+				font-family: Arial, sans-serif; /* Betűtípus megadása */
+			}
 
-            }
-            #link {
+			#menu {
+				text-transform: uppercase;
+				list-style-type: none;
+				display: flex; /* Flexbox elrendezés használata */
+				justify-content: space-between; /* Egyenlő távolság a menüpontok között */
+				background-color: #333; /* Háttérszín beállítása */
+				padding: 10px; /* Kitöltés hozzáadása a menü sávhoz */
+				margin: 0; /* Eltávolítjuk az alapértelmezett margót */
+			}
 
-            } 
-            #cim {
-                font-size: 50px;
+			#menu li {
+				flex: 1; /* Egyenlő szélesség a menüpontok között */
+				text-align: center; /* Középre igazítjuk a szöveget */
+			}
 
-            }
-            #alcim {
-                font-size: 50px;
+			#menu a {
+				font-size: 30px;
+				text-decoration: none; /* Aláhúzás eltávolítása */
+				color: white; /* Szövegszín beállítása */
+				display: block; /* Blokk szintű elemként jelenítjük meg */
+				padding: 10px; /* Kitöltés hozzáadása a linkekhez */
+			}
 
-            }
-            #alcim2 {
-                font-weight: bold;
-                font-size: larger;
-
-            }
-            #menu {
-                text-transform: uppercase;
-            }
-        </style>
+			#menu a:hover {
+				color: red; /* Szövegszín változtatás hover esetén */
+			}
+		</style>
     </head>
     <body>
-            <!--ez egy címsor-->
-            <h1>Üdvözölek a weboldalamon!</h1>
-            <!--ez egy másik címsor
-            <h2>Üdvözölek a weboldalamon!</h2>-->
-            <!--<h3>Üdvözölek a weboldalamon!</h3>-->
-
-            <!--Ez egy bekezdés-->
-            
-            <h2>
-                Navigáció
-            </h2>
-            
-
-            <!--Ez egy felsorolás, lista-->
-            <li id="menu" title="Kezdőoldal"><a href="index.html">Kezdőoldal</a></li>
-            <li id="menu" title="Szöveg Formázása"><a href="formazas.html">Szöveg Formázása</a></li>
-            <li id="menu" title="Képek"><a href="kepek.html">Képek</a></li>
-            <li id="menu" title="Stílusok"><a href="stilusok.html">Stílusok</a></li>
-            <br/>
-            <br/>
-            <br/>
-            <hr/>
+            <ul id="menu">
+				<li title="Kezdőoldal">
+					<a href="index.html">Kezdőoldal</a>
+				</li>
+				<li title="Szöveg Formázása">
+					<a href="formazas.html">Szöveg Formázása</a>
+				</li>
+				<li title="Képek">
+					<a href="kepek.html">Képek</a>
+				</li>
+				<li title="Stílusok">
+					<a href="stilusok.html" style="color: red; font-weight: 1000;">🍓Stílusok🍓</a>
+				</li>
+			</ul>
+			
             <h3>
                 <span style="font-size: 50px;font-weight: 200;">Stílusok</span>
             </h3>
@@ -75,8 +89,8 @@
                 Photograph of Tim Berners-Lee in April <span style="color: red;">2009</span>
                 Tim Berners-Lee in April <span style="color: red;">2009</span>
                 In <span style="color: red;">1980</span>, <a href="">physicist Tim Berners-Lee</a>, a contractor at CERN, proposed and prototyped ENQUIRE, a system for CERN researchers to use and share documents. 
-                In <span style="color: red;">1989</span>, Berners-Lee wrote a memo proposing an Internet-based hypertext system.[3] Berners-Lee specified HTML and wrote the browser and server software 
-                in late 1990. That year, Berners-Lee and CERN data systems engineer Robert Cailliau collaborated on a joint request for funding, but the project was not 
+                In <span style="color: red;">1989</span>, Berners-Lee wrote a memo proposing an Internet-based hypertext system.<sup>[3]</sup> Berners-Lee specified HTML and wrote the browser and server software 
+                in late <span style="color: red;">1990</span>. That year, Berners-Lee and CERN data systems engineer Robert Cailliau collaborated on a joint request for funding, but the project was not 
                 formally adopted by CERN. In his personal notes of <span style="color: red;">1990</span>, Berners-Lee listed "some of the many areas in which hypertext is used"; an <a href="">encyclopedia</a> is the first entry.[4]
             </p>
             <p>
@@ -90,8 +104,8 @@
                 Photograph of Tim Berners-Lee in April <span id="ev">2009</span>
                 Tim Berners-Lee in April <span id="ev">2009</span>
                 In <span id="ev">1980</span>, <a id="link" href="">physicist Tim Berners-Lee</a>, a contractor at CERN, proposed and prototyped ENQUIRE, a system for CERN researchers to use and share documents. 
-                In <span id="ev">1989</span>, Berners-Lee wrote a memo proposing an Internet-based hypertext system.[3] Berners-Lee specified HTML and wrote the browser and server software 
-                in late 1990. That year, Berners-Lee and CERN data systems engineer Robert Cailliau collaborated on a joint request for funding, but the project was not 
+                In <span id="ev">1989</span>, Berners-Lee wrote a memo proposing an Internet-based hypertext system.<sup>[3]</sup> Berners-Lee specified HTML and wrote the browser and server software 
+                in late <span id="ev">1990</span>. That year, Berners-Lee and CERN data systems engineer Robert Cailliau collaborated on a joint request for funding, but the project was not 
                 formally adopted by CERN. In his personal notes of <span id="ev">1990</span>, Berners-Lee listed "some of the many areas in which hypertext is used"; an <a href="" id="link">encyclopedia</a> is the first entry.[4]
             </p>
     </body>    

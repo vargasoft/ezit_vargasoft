@@ -3,37 +3,72 @@
 <html lang="hu">
     <head>
         <meta charset="UTF-8">
-        <title>ez az első weboldalam</title>
+        <title>Formázás</title>
+		 <!--Ez az oldal leírása-->
+		 <meta name="description" content="Ez Lacus első oldala">
+		 <!--Kulcsszavak-->
+		 <meta name="keyword" content="html, lacus, lacus.hu, gyakorlás">
+	 
+		 <!--Facebook meta info-->
+		 <!--Facebook oldal címe-->
+		 <meta property="og:title" content="Formázás">
+		 <meta property="og:description" content="Az első weboldalam örülök hogy itt vagy.">
+		 <meta property="og:image" content="src/fc243.avif">
+		 <meta property="og:url" content="https://lacus.hu/formazas.html">
+
+
         <style>
-            #menu{
-                text-transform: uppercase;
-            }
-        </style>
+			body {
+				margin: 0; /* Eltávolítjuk az alapértelmezett margókat */
+				padding: 0; /* Eltávolítjuk az alapértelmezett kitöltéseket */
+				font-family: Arial, sans-serif; /* Betűtípus megadása */
+			}
+
+			#menu {
+				text-transform: uppercase;
+				list-style-type: none;
+				display: flex; /* Flexbox elrendezés használata */
+				justify-content: space-between; /* Egyenlő távolság a menüpontok között */
+				background-color: #333; /* Háttérszín beállítása */
+				padding: 10px; /* Kitöltés hozzáadása a menü sávhoz */
+				margin: 0; /* Eltávolítjuk az alapértelmezett margót */
+			}
+
+			#menu li {
+				flex: 1; /* Egyenlő szélesség a menüpontok között */
+				text-align: center; /* Középre igazítjuk a szöveget */
+			}
+
+			#menu a {
+				font-size: 30px;
+				text-decoration: none; /* Aláhúzás eltávolítása */
+				color: white; /* Szövegszín beállítása */
+				display: block; /* Blokk szintű elemként jelenítjük meg */
+				padding: 10px; /* Kitöltés hozzáadása a linkekhez */
+			}
+
+			#menu a:hover {
+				color: red; /* Szövegszín változtatás hover esetén */
+			}
+		</style>
         
     </head>
     <body>
-            <!--ez egy címsor-->
-            <h1>Üdvözölek a weboldalamon!</h1>
-            <!--ez egy másik címsor
-            <h2>Üdvözölek a weboldalamon!</h2>-->
-            <!--<h3>Üdvözölek a weboldalamon!</h3>-->
-
-            <!--Ez egy bekezdés-->
-            
-            <h2>
-                Navigáció
-            </h2>
-            
-
-            <!--Ez egy felsorolás, lista-->
-            <li id="menu" title="Kezdőoldal"><a href="index.html">Kezdőoldal</a></li>
-            <li id="menu" title="Szöveg Formázása"><a href="formazas.html">Szöveg Formázása</a></li>
-            <li id="menu" title="Képek"><a href="kepek.html">Képek</a></li>
-            <li id="menu" title="Stílusok"><a href="stilusok.html">Stílusok</a></li>
-            <br/>
-            <br/>
-            <br/>
-            <hr/>
+            <ul id="menu">
+				<li title="Kezdőoldal">
+					<a href="index.html">Kezdőoldal</a> 
+				</li>
+				<li title="Szöveg Formázása">
+					<a href="formazas.html" style="color: red; font-weight: 1000;">🍓Szöveg Formázása🍓</a>
+				</li>
+				<li title="Képek">
+					<a href="kepek.html">Képek</a>
+				</li>
+				<li title="Stílusok">
+					<a href="stilusok.html">Stílusok</a>
+				</li>
+			</ul>
+	
             <h3>
                 Szövegek formázása HTML-ben
             </h3>
