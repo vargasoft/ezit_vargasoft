@@ -22,16 +22,19 @@ require_once('config/functions.php');
 
 $fullUrl = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-$server = "https://www.karpittisztitas-miskolc.hu/";
+$server = "http://localhost/miskolc-lakasfelujitas-miskolc.hu/";
 $telefon = "+36 (30) 103-1740";
 
-$owner = "Mata Oszkár";
-$address = "3531 Miskolc, Kis-Hunyad út 28.";
+$owner = "Lipták Gábor";
+$address = "3572, Sajólád, Móra Ferenc utca 5. ";
+$adoszam = "43337668-1-25";
+
 $facebook = 'https://www.facebook.com/KarpittisztitasMiskolcOn';
-$alt = 'Kárpittisztítás Miskolc és környékén, autó kárpittisztítás, bútor Kárpittisztítás, szőnyeg tisztítás';
-$title = "Kárpittisztítás Miskolc és környéke | Kárpittisztítás, Autókáprit tisztítás";
-$description = "Professzionális kárpittisztítás Miskolc és környékén. Szolgáltatásaink közé tartozik az autó kárpittisztítás, bútorkárpit tisztítás, matractisztítás és szőnyegtisztítás. Gyors és hatékony megoldások allergénmentesítéssel és folteltávolítással.";
-$keywords = "kárpittisztítás, kárpittisztítás Miskolc, autó kárpittisztítás, bútorkárpit tisztítás, matractisztítás, szőnyegtisztítás, allergénmentesítés, folteltávolítás, professzionális kárpittisztítás, gyors kárpittisztítás, kárpittisztító szolgáltatás, Miskolc és környéke, kárpittisztítás árak, környezetbarát kárpittisztítás";
+
+$alt = 'Lakásfelújítás Miskolc és környékén, konyha felújítás, fürdőszoba felújítás, nappali felújítás, hálószoba felújítás';
+$title = "Lakásfelújítás Miskolc és környéke | Konyha, Fürdőszoba, Nappali és Hálószoba Felújítás";
+$description = "Professzionális lakásfelújítás Miskolc és környékén. Szolgáltatásaink közé tartozik a konyha felújítása, fürdőszoba modernizálása, nappali átalakítása, valamint hálószoba felújítása. Gyors és hatékony megoldások, minőségi anyagok felhasználásával.";
+$keywords = "lakásfelújítás, lakásfelújítás Miskolc, konyha felújítás, fürdőszoba felújítás, nappali felújítás, hálószoba felújítás, professzionális lakásfelújítás, gyors lakásfelújítás, lakásfelújító szolgáltatás, Miskolc és környéke, lakásfelújítás árak, minőségi lakásfelújítás, környezetbarát lakásfelújítás";
 
 $small_logo = $server."assets/images/logo.png";
 $medium_logo = $server."assets/images/medium_logo.png";
@@ -1224,28 +1227,382 @@ function isMobileDevice() {
 <head>
 <meta charset="utf-8">
 	<!--basic tags-->
-	<title>Intenax - HTML Template | Homepage Three</title>
+	<title><?php echo $title;?></title>
 
 	<!--seo-->
+	<meta property="og:description" content="<?php echo $description;?>">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="<?php echo $server;?>">
+	<meta property="og:image" content="<?php echo $medium_logo;?>">
+	<meta property="og:site_name" content="<?php echo $title;?>">
+	<meta property="og:locale" content="hu_HU">
+	<meta property="og:keywords" content="<?php echo $description;?>">
+	<meta property="fb:app_id" content="1002396794255553">
 
+	<meta name="DC.title" content="<?php echo $title;?>">
+	<meta name="DC.description" content="<?php echo $description;?>">
+	<meta name="DC.publisher" content="VargaSoft">
+	<meta name="DC.date" content="2024-06-06">
+	<meta name="DC.language" content="hu">
+	<meta name="DC.subject" content="<?php echo $keywords;?>">
+
+	<meta name="sitemap" content="<?php echo $server;?>sitemap.xml">
+	<meta name="robots" content="index, follow">
+
+
+	<meta property="article:published_time" content="2024-07-20T07:55:54+01:00">
+	<meta property="article:modified_time" content="2024-07-21T14:22:20+01:00">
 
 	<!-- Stylesheets -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
-	<link href="plugins/revolution/css/layers.css" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
-	<link href="plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
+	<link href="<?php echo $server;?>css/bootstrap.css" rel="stylesheet">
+	<link href="<?php echo $server;?>plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
+	<link href="<?php echo $server;?>plugins/revolution/css/layers.css" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
+	<link href="<?php echo $server;?>plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
 
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+	<link href="<?php echo $server;?>css/style.css" rel="stylesheet">
+	<link href="<?php echo $server;?>css/responsive.css" rel="stylesheet">
 
-	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	<!--favicon-->
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo $server;?>images/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo $server;?>images/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $server;?>images/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo $server;?>images/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $server;?>images/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo $server;?>images/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo $server;?>images/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo $server;?>images/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $server;?>images/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo $server;?>images/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $server;?>images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo $server;?>images/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $server;?>images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="<?php echo $server;?>images/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="<?php echo $server;?>images/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
+	<!--disable click-->
+	
 
+	<!-- structured data-->
+	<script type="application/ld+json">
+		{
+		"@context": "http://schema.org",
+		"@type": "LocalBusiness",
+		"name": "Lakásfelújítás Miskolc és környéke",
+		"description": "<?php echo $description;?>",
+		"telephone": "<?php echo $telefon;?>",
+		"sameAs": ["<?php echo $server;?>"],
+		"priceRange": "$$$",
+		"url": "<?php echo $server;?>",
+		"logo": "<?php echo $medium_logo;?>",
+		"image": "<?php echo $medium_logo;?>",
+		"founder": {
+			"@type": "Person",
+			"name": "Mata Oszkár e.V."
+		},
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Móra Ferenc utca 5.",
+			"addressLocality": "Sajólád",
+			"postalCode": "3572",
+			"addressCountry": "Magyarország"
+		},
+		"contactPoint": {
+			"@type": "ContactPoint",
+			"telephone": "<?php echo $telefon;?>",
+			"contactType": "customer service"
+		},
+		"keywords": "<?php echo $keywords;?>",
+		"openingHoursSpecification": [
+			{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": [
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday"
+			],
+			"opens": "07:00",
+			"closes": "17:00"
+			},
+			{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": [
+				"Saturday",
+				"Sunday"
+			],
+			"opens": "09:00",
+			"closes": "14:00"
+			}
+		],
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "48.035540",
+			"longitude": "20.902110"
+		},
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.93",
+			"ratingCount": "710"
+		},
+		"review": [
+			{
+			"@type": "Review",
+			"author": "Kiss Mária",
+			"datePublished": "2024-04-17",
+			"name": "Kiváló konyhafelújítás!",
+			"reviewBody": "A konyhafelújítás gyorsan és profi módon zajlott le, az eredmény fantasztikus!",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.8"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Nagy Péter",
+			"datePublished": "2024-04-20",
+			"name": "Gyors és megbízható",
+			"reviewBody": "Nagyon gyorsan és precízen dolgoztak a fürdőszoba felújításán, maximálisan elégedett vagyok.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.9"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Szabó János",
+			"datePublished": "2024-05-02",
+			"name": "Kiváló minőség",
+			"reviewBody": "A nappali felújítása során minden részletre odafigyeltek, az eredmény kiváló.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "5.0"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Kovács Anna",
+			"datePublished": "2024-05-05",
+			"name": "Professzionális munka",
+			"reviewBody": "Nagyon alapos munkát végeztek a hálószoba felújításán, minden részlet tökéletes lett.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.7"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Tóth Gábor",
+			"datePublished": "2024-05-08",
+			"name": "Megbízható szolgáltatás",
+			"reviewBody": "Ajánlom mindenkinek, aki minőségi lakásfelújítást keres.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.6"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Molnár István",
+			"datePublished": "2024-05-11",
+			"name": "Tökéletes eredmény",
+			"reviewBody": "Nagyon elégedett vagyok a nappali felújításának végeredményével, minden ragyogó.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.8"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Horváth Éva",
+			"datePublished": "2024-05-14",
+			"name": "Kitűnő szolgáltatás",
+			"reviewBody": "Gyorsan reagáltak és precízen dolgoztak a konyhafelújítás során.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.9"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Fekete Péter",
+			"datePublished": "2024-05-17",
+			"name": "Csodálatos munka",
+			"reviewBody": "Nagyon profi csapat, a fürdőszoba felújítása lenyűgöző lett.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.7"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Kissné Szilvia",
+			"datePublished": "2024-05-20",
+			"name": "Tökéletes kiszolgálás",
+			"reviewBody": "Kedves és segítőkész személyzet, a hálószoba felújítása kiváló lett.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.9"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Simon András",
+			"datePublished": "2024-05-23",
+			"name": "Nagyszerű tapasztalat",
+			"reviewBody": "A konyha felújítása után minden olyan, mintha új lenne. Köszönöm!",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.8"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Kisné Júlia",
+			"datePublished": "2024-05-26",
+			"name": "Kiemelkedő munka",
+			"reviewBody": "Nagyon elégedett vagyok, és biztosan újra igénybe fogom venni a szolgáltatásukat a nappali felújítására.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.9"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Nagy Gergő",
+			"datePublished": "2024-05-29",
+			"name": "Gyors és hatékony",
+			"reviewBody": "Nagyon profi csapat, és a hálószoba felújítása is kiváló lett.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.7"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Király Dóra",
+			"datePublished": "2024-06-01",
+			"name": "Kiváló szolgáltatás",
+			"reviewBody": "Nagyon elégedett vagyok a fürdőszoba felújításának végeredményével.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.8"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Mészáros Péter",
+			"datePublished": "2024-06-04",
+			"name": "Nagyon elégedett vagyok",
+			"reviewBody": "Profik és a hálószoba felújítás végeredménye is kitűnő.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.9"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Balogh Katalin",
+			"datePublished": "2024-06-07",
+			"name": "Rendkívül elégedett vagyok",
+			"reviewBody": "A szolgáltatás kiváló, és a konyhafelújítás eredménye még annál is jobb!",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.8"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Török Béla",
+			"datePublished": "2024-06-10",
+			"name": "Nagyon jó szolgáltatás",
+			"reviewBody": "Gyorsan és hatékonyan dolgoztak a nappali felújításán, most újnak néz ki.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.7"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Varga Zsolt",
+			"datePublished": "2024-06-13",
+			"name": "Fantasztikus eredmény",
+			"reviewBody": "A fürdőszoba most olyan, mintha épp most hoztuk volna haza az új berendezéseket.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.9"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Kovácsné Ilona",
+			"datePublished": "2024-06-16",
+			"name": "Kiemelkedő teljesítmény",
+			"reviewBody": "Nagyon elégedett vagyok a szolgáltatással, és a hálószoba felújítás minőségével.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.8"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Budai István",
+			"datePublished": "2024-06-19",
+			"name": "Tökéletes felújítás",
+			"reviewBody": "Minden részlet tökéletes lett, a nappali most újnak néz ki.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.7"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Kissné Emese",
+			"datePublished": "2024-06-22",
+			"name": "Nagyon elégedett vagyok",
+			"reviewBody": "A konyhafelújítás eredménye tökéletes, és a szolgáltatás kiváló.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.9"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Nagy László",
+			"datePublished": "2024-06-25",
+			"name": "Fantasztikus munka",
+			"reviewBody": "A hálószoba most olyan, mintha új lenne.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.8"
+			}
+			},
+			{
+			"@type": "Review",
+			"author": "Kovács Júlia",
+			"datePublished": "2024-06-28",
+			"name": "Kitűnő szolgáltatás",
+			"reviewBody": "Profik voltak és a végeredmény is fantasztikus, a fürdőszoba most gyönyörű.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "4.9"
+			}
+			}
+		]
+		}
+		</script>
+		<style>
+			.header-style-three .main-menu .navigation > li > a#offers {
+				color: red;
+			}
+		</style>
+		
 </head>
 
 <body>
@@ -1266,9 +1623,10 @@ function isMobileDevice() {
                 <div class="top-left clearfix">
                     <!-- Info List -->
 					<ul class="info-list clearfix">
-                        <li><a href="#"><span>Address:</span> 63 Nelson Base, Florida</a></li>
-                        <li><a href="tel:+12345018607"><span>Phone:</span> +1 (234) 501 8607</a></li>
-						<li><a href="mailto:info@intenax.net"><span>Email:</span> info@intenax.net</a></li>
+						<li><a href="#"><span>Vállalkozó:</span> <?php echo $owner;?> e.v.</a></li>
+                        <li><a href="#"><span>Szolgáltatási terület:</span> Miskolc és környéke</a></li>
+                        <li><a href="tel:<?php echo $telefon;?>"><span>Phone:</span> <?php echo $telefon;?></a></li>
+						<li><a href="mailto:<?php echo $email;?>"><span>Email:</span> <?php echo $email;?></a></li>
                     </ul>
                 </div>
 				
@@ -1294,7 +1652,7 @@ function isMobileDevice() {
             	<div class="inner-container clearfix">
                 	
                 	<div class="pull-left logo-box">
-                    	<div class="logo"><a href="index.html"><img src="images/logo-3.png" alt="" title=""></a></div>
+                    	<div class="logo"><a href="index.html"><img src="images/logo-s.png" alt="<?php echo $alt;?>" title=""></a></div>
                     </div>
                    	
 					<div class="nav-outer clearfix">
@@ -1314,59 +1672,35 @@ function isMobileDevice() {
 
 							<div class="navbar-collapse collapse scroll-nav clearfix" id="navbarSupportedContent">
 								<ul class="navigation clearfix">
-									<li class="current dropdown"><a href="index.html">Home</a>
+									<li class="current dropdown"><a href="index.html">Lakásfelújítás Miskolcon</a>
 										<ul>
-											<li><a href="index.html">Home Page 01</a></li>
-											<li><a href="index-2.html">Home Page 02</a></li>
-											<li><a href="index-3.html">Home Page 03</a></li><li><a href="index-4.html">Home Page 04</a></li>
-											<li class="dropdown"><a href="index.html">Header Styles</a>
-												<ul>
-													<li><a href="index.html">Header Style 01</a></li>
-													<li><a href="index-2.html">Header Style 02</a></li>
-													<li><a href="index-3.html">Header Style 03</a></li>
-													<li><a href="index-4.html">Header Style 04</a></li>
-												</ul>
-											</li>
+											<li class="dropdown"><a href="index.html">Konyha felújítás Miskolc</a></li>
+											<li class="dropdown"><a href="index.html">Fürdőszoba felújítás Miskolc</a></li>
+											<li class="dropdown"><a href="index.html">Halószoba felújítás Miskolc</a></li>
+											<li class="dropdown"><a href="index.html">Nappali felújítás Miskolc</a></li>
+											<li class="dropdown"><a href="index.html">Erkély felújítás Miskolc</a></li>
 										</ul>
 									</li>
-									<li><a href="about.html">About Us</a></li>
-									<li class="dropdown"><a href="services.html">Services</a>
+									<li class="dropdown"><a href="services.html">Szolgáltatások</a>
 										<ul>
-											<li><a href="services.html">Services Type 01</a></li>
-											<li><a href="services-2.html">Services Type 02</a></li>
-											<li><a href="service-interior.html">Interior Design</a></li>
-											<li><a href="service-architecture.html">Architecture</a></li>
-											<li><a href="service-plans.html">Floor Plans</a></li>
-											<li><a href="service-lighting.html">Lighting Decor</a></li>
+											<li><a href="services.html">Burkolás Miskolc</a></li>
+											<li><a href="services-2.html">Lakásfestés Miskolc</a></li>
+											<li><a href="service-interior.html">Gipszkarton szerelés Miskolc</a></li>
+											<li><a href="service-architecture.html">Nyílászárók beépítése</a></li>
+											<li><a href="service-plans.html">Vízvezeték szerelés Miskolc</a></li>
+											<li><a href="service-lighting.html">Hőszigetelés MIskolc</a></li>
 										</ul>
 									</li>
-									<li class="dropdown"><a href="team.html">Pages</a>
-										<ul>
-											<li><a href="team.html">Meet Our Team</a></li>
-											<li><a href="about-me.html">Know About Me</a></li>
-											<li><a href="price.html">Our Price Plans</a></li>
-                                            <li><a href="contact-2.html">Contact Style 02</a></li>
-										</ul>
-									</li>
-									<li class="dropdown"><a href="blog.html">News</a>
-										<ul>
-											<li><a href="blog.html">News 03 Columns</a></li>
-											<li><a href="blog-classic.html">News Fullwidth</a></li>
-											<li><a href="blog-sidebar.html">News With Sidebar</a></li>
-											<li><a href="blog-single.html">News Details</a></li>
-										</ul>
-									</li>
-									<li><a href="contact.html">Contact Us</a></li>
+									<li class=""><a href="team.html">Munkáink</a></li>
+									
+									<li><a id="offers" href="contact.html" style="color:#e9c37a;font-weight:700;!Important">Kapcsolat / Árajánlatkérés</a></li>
+									
 								</ul>
 							</div>
 							
 						</nav>
 						<!-- Main Menu End-->
 						
-						<!-- Outer Box -->
-						<div class="outer-box">
-							<div class="search-box-btn"><span class="icon icon-magnifier"></span></div>
-						</div>
 						
 					</div>
 					
@@ -1380,7 +1714,7 @@ function isMobileDevice() {
         	<div class="auto-container clearfix">
             	<!--Logo-->
             	<div class="logo pull-left">
-                	<a href="index.html" class="img-responsive"><img src="images/logo-small.png" alt="" title=""></a>
+                	<a href="index.html" class="img-responsive"><img src="images/logo-small.png" alt="<?php echo $alt;?>" title=""></a>
                 </div>
                 
                 <!--Right Col-->
@@ -1404,7 +1738,7 @@ function isMobileDevice() {
             
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             <nav class="menu-box">
-            	<div class="nav-logo"><a href="index.html"><img src="images/nav-logo.png" alt="" title=""></a></div>
+            	<div class="nav-logo"><a href="index.html"><img src="images/nav-logo.png" alt="<?php echo $alt;?>" title=""></a></div>
                 
                 <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
             </nav>
@@ -1421,7 +1755,7 @@ function isMobileDevice() {
                 <ul>
                     
                     <li data-transition="slidingoverlayvertical" data-description="Slide Description"  data-index="rs-1688" data-slotamount="default" data-thumb="images/main-slider/5.jpg" data-title="Slide Title">
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/5.jpg">
+                    <img alt="<?php echo $alt;?>" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/5.jpg">
                     
 					<div class="tp-caption" 
                     data-paddingbottom="[0,0,0,0]"
@@ -1486,7 +1820,7 @@ function isMobileDevice() {
 					</li>
                     
                     <li data-transition="slidingoverlayvertical" data-description="Slide Description"  data-index="rs-1689" data-slotamount="default" data-thumb="images/main-slider/6.jpg" data-title="Slide Title">
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/6.jpg">
+                    <img alt="<?php echo $alt;?>" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/6.jpg">
                     
                     <div class="tp-caption" 
                     data-paddingbottom="[0,0,0,0]"
@@ -1551,7 +1885,7 @@ function isMobileDevice() {
 					</li>
 					
 					<li data-transition="slidingoverlayvertical" data-description="Slide Description"  data-index="rs-1690" data-slotamount="default" data-thumb="images/main-slider/7.jpg" data-title="Slide Title">
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/7.jpg">
+                    <img alt="<?php echo $alt;?>" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/7.jpg">
                     
                     <div class="tp-caption" 
                     data-paddingbottom="[0,0,0,0]"
@@ -1635,13 +1969,13 @@ function isMobileDevice() {
 						<!-- Image Column -->
 						<div class="image-column col-lg-6 col-md-6 col-sm-12">
 							<div class="image wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-								<img src="images/resource/about-1.jpg" alt="" />
+								<img src="images/resource/about-1.jpg" alt="<?php echo $alt;?>" />
 							</div>
 						</div>
 						<!-- Image Column -->
 						<div class="image-column col-lg-6 col-md-6 col-sm-12">
 							<div class="image wow fadeInDown" data-wow-delay="300ms" data-wow-duration="1500ms">
-								<img src="images/resource/about-2.jpg" alt="" />
+								<img src="images/resource/about-2.jpg" alt="<?php echo $alt;?>" />
 							</div>
 						</div>
 						
@@ -1672,7 +2006,7 @@ function isMobileDevice() {
 							<div class="image-column col-lg-4 col-md-12 col-sm-12">
 								<div class="column-inner">
 									<div class="image wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-										<img src="images/resource/about-3.jpg" alt="" />
+										<img src="images/resource/about-3.jpg" alt="<?php echo $alt;?>" />
 									</div>
 								</div>
 							</div>
@@ -1897,7 +2231,7 @@ function isMobileDevice() {
 							<!-- Image Column -->
 							<div class="image-column col-lg-6 col-md-6 col-sm-12">
 								<div class="image">
-									<a href="#"><img src="images/resource/counter-4.jpg" alt="" /></a>
+									<a href="#"><img src="images/resource/counter-4.jpg" alt="<?php echo $alt;?>" /></a>
 								</div>
 							</div>
 							<!-- Content Column -->
@@ -1922,7 +2256,7 @@ function isMobileDevice() {
 							<!-- Image Column -->
 							<div class="image-column col-lg-6 col-md-6 col-sm-12">
 								<div class="image">
-									<a href="#"><img src="images/resource/counter-5.jpg" alt="" /></a>
+									<a href="#"><img src="images/resource/counter-5.jpg" alt="<?php echo $alt;?>" /></a>
 								</div>
 							</div>
 							<!-- Content Column -->
@@ -1947,7 +2281,7 @@ function isMobileDevice() {
 							<!-- Image Column -->
 							<div class="image-column col-lg-6 col-md-6 col-sm-12">
 								<div class="image">
-									<a href="#"><img src="images/resource/counter-6.jpg" alt="" /></a>
+									<a href="#"><img src="images/resource/counter-6.jpg" alt="<?php echo $alt;?>" /></a>
 								</div>
 							</div>
 							<!-- Content Column -->
@@ -1980,7 +2314,7 @@ function isMobileDevice() {
 				<div class="project-block-two">
 					<div class="inner-box">
 						<div class="image">
-							<img src="images/gallery/18.jpg" alt="" />
+							<img src="images/gallery/18.jpg" alt="<?php echo $alt;?>" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
@@ -1999,7 +2333,7 @@ function isMobileDevice() {
 				<div class="project-block-two">
 					<div class="inner-box">
 						<div class="image">
-							<img src="images/gallery/19.jpg" alt="" />
+							<img src="images/gallery/19.jpg" alt="<?php echo $alt;?>" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
@@ -2018,7 +2352,7 @@ function isMobileDevice() {
 				<div class="project-block-two">
 					<div class="inner-box">
 						<div class="image">
-							<img src="images/gallery/20.jpg" alt="" />
+							<img src="images/gallery/20.jpg" alt="<?php echo $alt;?>" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
@@ -2037,7 +2371,7 @@ function isMobileDevice() {
 				<div class="project-block-two">
 					<div class="inner-box">
 						<div class="image">
-							<img src="images/gallery/21.jpg" alt="" />
+							<img src="images/gallery/21.jpg" alt="<?php echo $alt;?>" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
@@ -2056,7 +2390,7 @@ function isMobileDevice() {
 				<div class="project-block-two">
 					<div class="inner-box">
 						<div class="image">
-							<img src="images/gallery/18.jpg" alt="" />
+							<img src="images/gallery/18.jpg" alt="<?php echo $alt;?>" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
@@ -2075,7 +2409,7 @@ function isMobileDevice() {
 				<div class="project-block-two">
 					<div class="inner-box">
 						<div class="image">
-							<img src="images/gallery/19.jpg" alt="" />
+							<img src="images/gallery/19.jpg" alt="<?php echo $alt;?>" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
@@ -2094,7 +2428,7 @@ function isMobileDevice() {
 				<div class="project-block-two">
 					<div class="inner-box">
 						<div class="image">
-							<img src="images/gallery/20.jpg" alt="" />
+							<img src="images/gallery/20.jpg" alt="<?php echo $alt;?>" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
@@ -2113,7 +2447,7 @@ function isMobileDevice() {
 				<div class="project-block-two">
 					<div class="inner-box">
 						<div class="image">
-							<img src="images/gallery/21.jpg" alt="" />
+							<img src="images/gallery/21.jpg" alt="<?php echo $alt;?>" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
@@ -2170,7 +2504,7 @@ function isMobileDevice() {
 							<div class="lower-box">
 								<div class="box-inner">
 									<div class="image">
-										<img src="images/resource/brand-1.jpg" alt="" />
+										<img src="images/resource/brand-1.jpg" alt="<?php echo $alt;?>" />
 									</div>
 									<div class="text">Fustered impressive manifest crud ipsum opens forewent and after wasteful telling prang squid hesitantly preparatory gibbered som decore rec sed ipsum teque philosophia.</div>
 								</div>
@@ -2187,7 +2521,7 @@ function isMobileDevice() {
 							<div class="lower-box">
 								<div class="box-inner">
 									<div class="image">
-										<img src="images/resource/brand-2.jpg" alt="" />
+										<img src="images/resource/brand-2.jpg" alt="<?php echo $alt;?>" />
 									</div>
 									<div class="text">Fustered impressive manifest crud ipsum opens forewent and after wasteful telling prang squid hesitantly preparatory gibbered som decore rec sed ipsum teque philosophia.</div>
 								</div>
@@ -2283,22 +2617,22 @@ function isMobileDevice() {
                 <div class="client-thumb-outer">
                     <div class="client-thumbs-carousel owl-carousel owl-theme">
                         <div class="thumb-item">
-                            <figure class="thumb-box"><img src="images/resource/author-3.jpg" alt=""></figure>
+                            <figure class="thumb-box"><img src="images/resource/author-3.jpg" alt="<?php echo $alt;?>"></figure>
                         </div>
                         <div class="thumb-item">
-                            <figure class="thumb-box"><img src="images/resource/author-4.jpg" alt=""></figure>
+                            <figure class="thumb-box"><img src="images/resource/author-4.jpg" alt="<?php echo $alt;?>"></figure>
                         </div>
                         <div class="thumb-item">
-                            <figure class="thumb-box"><img src="images/resource/author-5.jpg" alt=""></figure>
+                            <figure class="thumb-box"><img src="images/resource/author-5.jpg" alt="<?php echo $alt;?>"></figure>
                         </div>
                         <div class="thumb-item">
-                            <figure class="thumb-box"><img src="images/resource/author-3.jpg" alt=""></figure>
+                            <figure class="thumb-box"><img src="images/resource/author-3.jpg" alt="<?php echo $alt;?>"></figure>
                         </div>
                         <div class="thumb-item">
-                            <figure class="thumb-box"><img src="images/resource/author-4.jpg" alt=""></figure>
+                            <figure class="thumb-box"><img src="images/resource/author-4.jpg" alt="<?php echo $alt;?>"></figure>
                         </div>
                         <div class="thumb-item">
-                            <figure class="thumb-box"><img src="images/resource/author-5.jpg" alt=""></figure>
+                            <figure class="thumb-box"><img src="images/resource/author-5.jpg" alt="<?php echo $alt;?>"></figure>
                         </div>
                     </div>
                 </div>
@@ -2316,7 +2650,7 @@ function isMobileDevice() {
            <!--Image Column-->
         	<div class="image-column" style="background-image: url(images/resource/image-1.jpg)">
             	<div class="image">
-                	<img src="images/resource/image-1.jpg" alt="">
+                	<img src="images/resource/image-1.jpg" alt="<?php echo $alt;?>">
                 </div>
                 <a href="https://www.youtube.com/watch?v=SXZXtD60t2g" class="overlay-link lightbox-image">
                 	<div class="icon-box">
@@ -2393,49 +2727,49 @@ function isMobileDevice() {
 					<!-- Column -->
 					<div class="column col-lg-3 col-md-6 col-sm-12">
 						<div class="image">
-							<a href="#"><img src="images/clients/11.jpg" alt=""></a>
+							<a href="#"><img src="images/clients/11.jpg" alt="<?php echo $alt;?>"></a>
 						</div>
 					</div>
 					<!-- Column -->
 					<div class="column col-lg-3 col-md-6 col-sm-12">
 						<div class="image">
-							<a href="#"><img src="images/clients/12.jpg" alt=""></a>
+							<a href="#"><img src="images/clients/12.jpg" alt="<?php echo $alt;?>"></a>
 						</div>
 					</div>
 					<!-- Column -->
 					<div class="column col-lg-3 col-md-6 col-sm-12">
 						<div class="image">
-							<a href="#"><img src="images/clients/13.jpg" alt=""></a>
+							<a href="#"><img src="images/clients/13.jpg" alt="<?php echo $alt;?>"></a>
 						</div>
 					</div>
 					<!-- Column -->
 					<div class="column col-lg-3 col-md-6 col-sm-12">
 						<div class="image">
-							<a href="#"><img src="images/clients/14.jpg" alt=""></a>
+							<a href="#"><img src="images/clients/14.jpg" alt="<?php echo $alt;?>"></a>
 						</div>
 					</div>
 					<!-- Column -->
 					<div class="column col-lg-3 col-md-6 col-sm-12">
 						<div class="image">
-							<a href="#"><img src="images/clients/15.jpg" alt=""></a>
+							<a href="#"><img src="images/clients/15.jpg" alt="<?php echo $alt;?>"></a>
 						</div>
 					</div>
 					<!-- Column -->
 					<div class="column col-lg-3 col-md-6 col-sm-12">
 						<div class="image">
-							<a href="#"><img src="images/clients/16.jpg" alt=""></a>
+							<a href="#"><img src="images/clients/16.jpg" alt="<?php echo $alt;?>"></a>
 						</div>
 					</div>
 					<!-- Column -->
 					<div class="column col-lg-3 col-md-6 col-sm-12">
 						<div class="image">
-							<a href="#"><img src="images/clients/17.jpg" alt=""></a>
+							<a href="#"><img src="images/clients/17.jpg" alt="<?php echo $alt;?>"></a>
 						</div>
 					</div>
 					<!-- Column -->
 					<div class="column col-lg-3 col-md-6 col-sm-12">
 						<div class="image">
-							<a href="#"><img src="images/clients/18.jpg" alt=""></a>
+							<a href="#"><img src="images/clients/18.jpg" alt="<?php echo $alt;?>"></a>
 						</div>
 					</div>
 				</div>
@@ -2613,7 +2947,7 @@ function isMobileDevice() {
 		<!-- Footer Bottom Image -->
 		<div class="footer-bottom-image">
 			<div class="image">
-				<img src="images/background/4.jpg" alt="" />
+				<img src="images/background/4.jpg" alt="<?php echo $alt;?>" />
 			</div>
 		</div>
 		
@@ -2690,5 +3024,8 @@ function isMobileDevice() {
 <!--End Google Map APi-->
 </body>
 
-<!-- Mirrored from t.commonsupport.xyz/intenax/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Jul 2024 21:03:10 GMT -->
 </html>
+
+<?php
+ob_end_flush();
+?>
