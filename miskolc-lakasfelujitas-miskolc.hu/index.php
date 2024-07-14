@@ -1598,9 +1598,25 @@ function isMobileDevice() {
 		}
 		</script>
 		<style>
-			.header-style-three .main-menu .navigation > li > a#offers {
-				color: red;
+			@keyframes blink {
+				0% {
+					color: #e9c37a;
+				}
+				50% {
+					color: white;
+				}
+				100% {
+					color: #e9c37a;
+				}
 			}
+
+			#offers {
+				font-weight: 600 !important;
+				text-transform: uppercase;
+				animation: blink 1s infinite;
+				color: #e9c37a !important; /* Egyéb stílusbeállítások */
+				}
+
 		</style>
 		
 </head>
@@ -1693,7 +1709,7 @@ function isMobileDevice() {
 									</li>
 									<li class=""><a href="team.html">Munkáink</a></li>
 									
-									<li><a id="offers" href="contact.html" style="color:#e9c37a;font-weight:700;!Important">Kapcsolat / Árajánlatkérés</a></li>
+									<li><a id="offers" href="contact.html" style="font-weight:700 !important;">Kapcsolat / Árajánlatkérés</a></li>
 									
 								</ul>
 							</div>
